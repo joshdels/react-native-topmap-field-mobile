@@ -1,6 +1,6 @@
 import { View, Text, StyleSheet } from "react-native";
 
-import Button from "../components/button/Button";
+import Button from "../components/Button";
 
 type Props = {
   name: string;
@@ -14,9 +14,9 @@ export default function Index() {
         <Text style={styles.title}>TopMapSolution Mobile</Text>
       </View>
       <View style={styles.buttonContainer}>
-        <Button name="hello1"></Button>
-        <Button name="hello2"></Button>
-        <Button name="hello3"></Button>
+        <Button icon="cloud" name="Cloud Projects"></Button>
+        <Button icon="folder" name="Load Local Project/s"></Button>
+        <Button icon="add" name="Create New Project"></Button>
       </View>
     </View>
   );
@@ -24,9 +24,9 @@ export default function Index() {
 
 const styles = StyleSheet.create({
   container: {
-    flex:1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
     padding: 20,
   },
   title: {
@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     marginBottom: 50,
   },
   buttonContainer: {
-    flexDirection: 'row',
-    gap: 30
-  }
+    flexDirection: "row",
+    gap: 30,
+  },
 });
