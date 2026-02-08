@@ -1,5 +1,6 @@
 import React from "react";
 import { View, Text, Pressable, StyleSheet } from "react-native";
+import { router } from "expo-router";
 
 import { AddButton } from "../../../components/Button";
 
@@ -17,11 +18,12 @@ export default function ProjectManager() {
       <View style={styles.folderContainer}>
         <Text style={styles.tableHeader}>Folders</Text>
         <View style={styles.tableContent}>
-          <View>{/*list go here :)*/}1</View>
-          <View>{/*list go here :)*/}1</View>
-          <View>{/*list go here :)*/}1</View>
+          <View>
+            {/*list go here :)*/}
+            <Text>1</Text>
+          </View>
         </View>
-        <AddButton />
+        <AddButton path="/projects/new" />
       </View>
     </View>
   );
@@ -31,6 +33,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 10,
+    marginVertical: 40,
   },
   headerTitle: {
     fontSize: 20,

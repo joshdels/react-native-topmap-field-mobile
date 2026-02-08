@@ -1,11 +1,7 @@
 import { View, Text, StyleSheet } from "react-native";
+import { router } from "expo-router";
 
 import Button from "../components/Button";
-
-type Props = {
-  name: string;
-  baseEnthusiasmLevel?: number;
-};
 
 export default function Index() {
   return (
@@ -14,9 +10,21 @@ export default function Index() {
         <Text style={styles.title}>TopMapSolution Mobile</Text>
       </View>
       <View style={styles.buttonContainer}>
-        <Button icon="cloud" name="Cloud Projects"></Button>
-        <Button icon="folder" name="Load Local Project/s"></Button>
-        <Button icon="add" name="Create New Project"></Button>
+        <Button
+          icon="cloud"
+          name="Cloud Projects"
+          path="/projects/cloud"
+        ></Button>
+        <Button
+          icon="folder"
+          name="Load Local Project/s"
+          path="/projects/manager"
+        ></Button>
+        <Button
+          icon="add"
+          name="Create New Project"
+          path="/projects/new"
+        ></Button>
       </View>
     </View>
   );
@@ -35,6 +43,6 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     flexDirection: "row",
-    gap: 30,
+    gap: 10,
   },
 });

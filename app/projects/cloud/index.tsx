@@ -1,5 +1,6 @@
 import React from "react";
 import { View, Text, Pressable, StyleSheet } from "react-native";
+import { router } from "expo-router";
 
 type Props = {
   name?: string;
@@ -16,11 +17,16 @@ export default function ProjectManager({ name = "User" }: Props) {
         <Text style={styles.tableHeader}>Folders</Text>
         <View style={styles.tableContent}>
           {/* Needs for loop */}
-          <View style={styles.tableRow}>{/*list go here :)*/}1</View>
-          <View style={styles.tableRow}>{/*list go here :)*/}1</View>
+          {/* Mobile having hardtime in the view/text, for text make it text */}
+          <View style={styles.tableRow}>
+            {/*list go here :)*/}
+            <Text>1</Text>
+          </View>
         </View>
       </View>
-      <Pressable style={styles.refresh}>Refresh Project/s List</Pressable>
+      <Pressable style={styles.refresh}>
+        <Text>Refresh Project/s List</Text>
+      </Pressable>
     </View>
   );
 }
@@ -29,6 +35,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 10,
+    marginVertical: 40,
   },
   headerTitle: {
     fontSize: 20,
@@ -61,6 +68,7 @@ const styles = StyleSheet.create({
   },
   refresh: {
     bottom: 20,
+    padding: 5,
     backgroundColor: "#e4e4e4ff",
     position: "absolute",
     textAlign: "center",
