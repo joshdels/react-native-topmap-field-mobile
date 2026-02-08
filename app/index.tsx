@@ -23,9 +23,14 @@ export default function Index() {
         <Button
           icon="add"
           name="Create New Project"
-          path="/projects/new"
+          path="/projects/new_projects"
         ></Button>
       </View>
+      <Button
+        icon="add"
+        name="Login Testing"
+        path="/account/login"
+      ></Button>
     </View>
   );
 }

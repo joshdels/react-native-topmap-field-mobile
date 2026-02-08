@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Text, Pressable, StyleSheet } from "react-native";
-import { router } from "expo-router";
+
+import Table from "../../components/Table";
 
 type Props = {
   name?: string;
@@ -13,18 +14,8 @@ export default function ProjectManager({ name = "User" }: Props) {
         <Text style={styles.headerTitle}>TopMapSync Projects</Text>
         <Text style={styles.subTitle}>Good Day! {name}</Text>
       </View>
-      <View style={styles.folderContainer}>
-        <Text style={styles.tableHeader}>Folders</Text>
-        <View style={styles.tableContent}>
-          {/* Needs for loop */}
-          {/* Mobile having hardtime in the view/text, for text make it text */}
-          <View style={styles.tableRow}>
-            {/*list go here :)*/}
-            <Text>1</Text>
-          </View>
-        </View>
-      </View>
-      <Pressable style={styles.refresh}>
+      <Table />
+      <Pressable style={styles.refresh} onPress={() => alert("This is refreshing")}>
         <Text>Refresh Project/s List</Text>
       </Pressable>
     </View>
@@ -40,7 +31,7 @@ const styles = StyleSheet.create({
   headerTitle: {
     fontSize: 20,
     textAlign: "center",
-    marginBottom: 50,
+    marginBottom: 10,
   },
   subTitle: {
     textAlign: "left",
@@ -51,30 +42,14 @@ const styles = StyleSheet.create({
     borderColor: "#e4e4e4ff",
     borderStyle: "solid",
   },
-  tableHeader: {
-    backgroundColor: "#e4e4e4ff",
-    padding: 10,
-    textAlign: "center",
-    fontWeight: "bold",
-  },
-  tableContent: {
-    gap: 5,
-  },
-  tableRow: {
-    padding: 10,
-    borderBottomColor: "#e4e4e4ff",
-    borderStyle: "solid",
-    borderBottomWidth: 2,
-  },
   refresh: {
-    bottom: 20,
-    padding: 5,
-    backgroundColor: "#e4e4e4ff",
     position: "absolute",
-    textAlign: "center",
-    alignSelf: "center",
-    justifyContent: "center",
-    width: "98%",
+    bottom: 20,
+    left: 20,
+    right: 20,
     height: 40,
+    backgroundColor: "#e4e4e4ff",
+    justifyContent: "center",
+    alignItems: "center",
   },
 });
