@@ -15,6 +15,7 @@ To enable file-based routing in your project:
 ```
 npm install expo-router
 ```
+
 Official Router Guide: [Expo Router] (https://docs.expo.dev/versions/latest/sdk/router/)
 ---
 
@@ -25,4 +26,8 @@ expo install @expo/vector-icons
 
 ```
 preview of icons: [Expo Icons](https://icons.expo.fyi/Index)
+
+4. Maplibre [Docs] (https://maplibre.org/maplibre-react-native/docs/setup/expo)
+```
+
 ```

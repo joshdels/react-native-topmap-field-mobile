@@ -26,11 +26,10 @@ export default function Index() {
           path="/projects/new_projects"
         ></Button>
       </View>
-      <Button
-        icon="add"
-        name="Login Testing"
-        path="/account/login"
-      ></Button>
+      <View style={styles.buttonContainer}>
+        <Button icon="add" name="Login Testing" path="/account/login"></Button>
+        <Button icon="map" name="Map Testing" path="/map"></Button>
+      </View>
     </View>
   );
 }
@@ -49,5 +48,6 @@ const styles = StyleSheet.create({
   buttonContainer: {
     flexDirection: "row",
     gap: 10,
+    marginBottom: 10,
   },
 });

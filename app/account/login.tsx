@@ -8,14 +8,23 @@ import {
   Alert,
 } from "react-native";
 
+import { ApiLogin } from "../../hooks/server";
+
 export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSignIn = () => {
+  const handleSignIn = async () => {
     if (!username || !password) {
       Alert.alert("Missing fields", "Please enter your credentials");
       return;
+    }
+
+    try {
+      const result = await ApiLogin(username, password);
+      console.log("Login success:", result);
+    } catch (error: any) {
+      Alert.alert("Login Failed", error.message);
     }
 
     // TEMP: replace with API call later
@@ -72,7 +81,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-    justifyContent: "center",
+    marginTop: 150,
   },
   login: {
     marginBottom: 40,
@@ -81,7 +90,11 @@ const styles = StyleSheet.create({
     fontWeight: "600",
   },
   inputBox: {
-    backgroundColor: "#b2c4a4d3",
+    // backgroundColor: "#b2c4a4d3",
+    borderColor: "#b2c4a4d3",
+    borderWidth: 1,
+    borderStyle: "solid",
+    opacity: 1,
     padding: 12,
     borderRadius: 6,
     marginTop: 6,
