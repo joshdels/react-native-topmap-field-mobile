@@ -27,7 +27,7 @@ export default function Index() {
         ></Button>
       </View>
       <View style={styles.buttonContainer}>
-        <Button icon="add" name="Login Testing" path="/account/login"></Button>
+        <Button icon="person" name="Login Testing" path="/account/login"></Button>
         <Button icon="map" name="Map Testing" path="/map"></Button>
       </View>
     </View>
